@@ -13079,7 +13079,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h2>Linear Model Reference Adaptive Control (MRAC)</h2></p>
 <h3>Theoretical Formulation</h3>
-This code is a direct method of implementing MRAC to a simple scalar system. MRAC is a method used when there is uncertainty in a real life plant. Ideally, what MRAC hopes to achieve is to adapt the real life plant to the dynamics of a reference model. Consider a linear plant with some uncertainty $f(x,t) = \theta^* x$ where $\theta$ is an unknown parameter constant:  <br>
+The code presented here is a direct method of implementing MRAC to a simple scalar system. MRAC is a method used when there is uncertainty in a real life plant. Ideally, what MRAC hopes to achieve is to adapt the real life plant to the dynamics of a reference model. Consider a linear plant with some uncertainty $f(x,t) = \theta^* x$ where $\theta$ is an unknown parameter constant:  <br>
 $$\dot{x} = ax + b(u+f(x,t))$$ <br>
 Now, we let's consider a reference model for the our plant to follow: <br> <br>
 $$ \dot{x}_m = a_m x_m + b_m r $$ <br>
@@ -13101,7 +13101,7 @@ At this point, there are a few insights that should be explicitly pointed out: <
 1. $a \neq a_m \implies$ that the plant has its own dynamic response (by the virtue of $a$), but since we want we want our plant to follow the reference model ($a_m$), we add the term $k^*_x$ to our control law. This argument could be made to the term $b$ as well.  
 <br>
 2. The complexity of the control law depends on the number of known terms that we have in the system. Suppose that $a$ and $b$ are unknown, then $k^*_x$ and $k^*_r$ will require its own adaptation term as well. 
-
+<br>
 3. $x_m$ and $x$ are not the same state variables. $x_m$ is a model we want to follow. $x$ is the true representation of the current state. 
 
 Let's choose a Lyapunov Canditate Function as: 
